@@ -1,0 +1,57 @@
+/* header .top1 .new_route h1, header .top1 .new_route p{
+	text-align: center;
+}
+
+header .top2 a{
+	margin-left: 20%;
+}
+
+header .top2 .add_route{
+	text-align: center;
+} */
+
+form {display: none;}
+form input {
+    width: 150px;
+	margin-left: 15px;
+}
+form #inTimeStart, form #inTimeEnd{width: 85px;}
+form label {
+    width: 150px;
+    display: inline-block;
+}
+#buttons {display: none;}
+.dispInl{display: inline-block;}
+
+button {margin: 5px;}
+
+.flexCont{
+	width: 100%;
+	display: flex;
+}
+.flexCont .flexIt{width: 50%;}
+.flexCont .flexIt #select1{
+	width: 200px;
+	font-size: 18px;
+	display: none;
+	margin-top: 20px;
+}
+.flexCont .flexIt #lis{margin-top: 20px;}
+.flexCont #info {display: flex; align-items: center;}
+.flexCont .flexIt span {color: grey;}
+.flexCont .flexIt span:hover {color: black;}
+
+.flexCont .flexIt #forecast {border: 2px solid palevioletred; padding: 50px;}
+.flexCont .flexIt #forecast li{
+margin-bottom: 15px;
+font-size: 20px;
+color: blue;
+}
+
+.flexCont .flexIt #lis .btnFiltr {
+	display: inline-block;
+	width: 150px;
+	height: 40px;
+	border: 2px solid grey;
+	background-color: white;
+}

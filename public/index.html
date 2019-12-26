@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Races</title>
+     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./fonts/mgopen.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300i,400,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./fonts/all.css">
+</head>
+
+<body>
+
+<div class="flexCont">
+    <div class="flexIt">
+        <button id="btn1">новый рейс</button>
+        <select id="select1" required>
+            <option value =""disabled selected>Выберите транспорт</option>
+            <option value="автобус" >автобус</option> 
+            <option value="поезд">поезд</option> 
+            <option value="такси">такси</option>
+            <option value="лошадь">лошадь</option>
+        </select>
+
+        <form id="maket">
+            <p><label for="inDate">Дата</label><input type="date" id="inDate" required></p>
+            <p><label for="inStart">Станция отправления</label><input type="text" id="inStart" required pattern="^[a-zA-ZА-Яа-яЁё]+$"></p>
+            <p><label for="inEnd">Станция прибытия</label><input type="text" id="inEnd" required pattern="^[a-zA-ZА-Яа-яЁё]+$"></p>
+            <p><label for="inTimeStart">Время отправления</label><input type="time" id="inTimeStart" required></p>
+            <p><label for="inTimeEnd">Время прибытия</label><input type="time" id="inTimeEnd" required></p>
+            <p><label for="inPrice">Цена, $</label><input type="text" id="inPrice" required pattern="\d+(\.\d{2})?"></p>
+            <button type="button" id="btnNew">добавить путь</button>
+            <button type="reset">Reset</button>
+        </form>
+
+        <section id="lis">
+            <div class="btnFiltr" id="btnFiltr1">Главное табло</div>
+            <div class="btnFiltr" id="btnFiltr2">Ждут отправления</div>
+            <div class="btnFiltr" id="btnFiltr3">Отправленные</div>
+            <ul id="items">
+            </ul>
+        </section>
+
+        <div id="buttons">
+            <button id="clear">Очистить</button>
+            <button id="save">Сохранить</button>
+        </div>
+    </div>
+
+    <div class="flexIt" id="info"></div>
+
+
+</div>
+    <script src="./fonts/all.js"></script>
+</body>
+
+</html>
