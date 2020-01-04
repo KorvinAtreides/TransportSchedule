@@ -1,4 +1,4 @@
-import {checkType,deleteRace,changeRace, myMap, obj} from '../main.js';  
+import {checkType,deleteRace,changeRace, myMap} from '../main.js';  
 export default function loadTodo(){
     if(localStorage.getItem('todoList')){
       let ul = document.querySelector("ul");
@@ -16,12 +16,4 @@ export default function loadTodo(){
       deleteRace();
       checkType();
     }
-    if(localStorage.getItem('val')){
-      let val1 = localStorage.getItem('val');
-      obj.val = val1;
-      let select1 = document.getElementById('select1');
-      if (val1 != undefined && val1 != "undefined") {
-        select1.value = String(obj.val);
-      } else {select1.options[0].selected = true;}
-    } else {select1.options[0].selected = true;}
 }

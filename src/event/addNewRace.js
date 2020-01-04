@@ -1,4 +1,4 @@
-import {checkType,deleteRace,changeRace, myMap, obj} from '../main.js';
+import {checkType,deleteRace,changeRace, myMap} from '../main.js';
 import Race from '../class/Race.js';
 export default function addNewRace(){
     let select1 = document.getElementById('select1')
@@ -24,12 +24,11 @@ export default function addNewRace(){
 
     li.innerHTML+='<div class="dispInl" id="change'+today.getHours()+today.getMinutes() +today.getSeconds()+'"><button type="button" class="changeBtn">change</button><button type="button" class="deleteBtn">delete</button></div>';
     li.innerHTML+='<span><i class="fas fa-check-circle"></i></span>'
+    li.lastChild.style.color = 'grey';
     myMap.set('change'+today.getHours()+today.getMinutes() +today.getSeconds()+'',newRace);
     let inpyts = document.getElementsByTagName("input");     
     for(let inpyt of inpyts){inpyt.value =""}
-    if (obj.val != undefined && obj.val != "undefined") {
-      select1.value = String(obj.val);
-    } else {select1.options[0].selected = true;}
+    select1.options[0].selected = true;
     let info = document.getElementById("info");
     info.innerHTML ="";
     changeRace();

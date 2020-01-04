@@ -35,4 +35,12 @@ export default function filterIn(btn){
         } else{li.style.display = "block";}
       }
     }
+    if (btn.id == 'btnFiltr4'){
+      for(let li of lists){
+        let el = li.lastChild;
+        if (el.style.color =='grey'){
+          li.style.display = "none";
+        } else{li.style.display = "block";}
+      }
+    }
 }

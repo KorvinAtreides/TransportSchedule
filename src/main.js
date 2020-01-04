@@ -6,8 +6,6 @@ var myMap = new Map();
 export var myMap;
 var changeBtns = document.getElementsByClassName("changeBtn");
 var deleteBtns = document.getElementsByClassName("deleteBtn");
-var obj = {val:"undefined"}; 
-export var obj;
 
 import loadTodo from './serv/loadStorage.js';
 import saveStorage from './serv/saveStorage.js';
@@ -33,6 +31,8 @@ document.getElementById('select1').addEventListener('change', function() {
 })
 inEnd.addEventListener('change', function() {
   if (inEnd.validity.valid == true) {
+  let info = document.getElementById("info");
+  info.innerHTML ="";
   weatherBalloon(inEnd.value);
   flickr(inEnd.value);
   }  
@@ -78,6 +78,6 @@ export function checkType(){
   let spans =document.getElementsByTagName("span");
   for(let span of spans){
     span.addEventListener ("click",function (){
-      checkTypeInp(span)})
+    checkTypeInp(span)})
   }
 }

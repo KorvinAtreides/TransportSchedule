@@ -19,9 +19,9 @@ form #inTimeStart, form #inTimeEnd{width: 85px;}
 form label {
     width: 150px;
     display: inline-block;
-}
-#buttons {display: none;}
-.dispInl{display: inline-block;}
+} 
+#buttons {display: none;} /*save-delete storage*/
+.dispInl{display: inline-block;}/* div with change nd delete btns */
 
 button {margin: 5px;}
 
@@ -29,7 +29,7 @@ button {margin: 5px;}
 	width: 100%;
 	display: flex;
 }
-.flexCont .flexIt{width: 50%;}
+.flexCont #flex1{width: 60%;}
 .flexCont .flexIt #select1{
 	width: 200px;
 	font-size: 18px;
@@ -37,9 +37,15 @@ button {margin: 5px;}
 	margin-top: 20px;
 }
 .flexCont .flexIt #lis{margin-top: 20px;}
-.flexCont #info {display: flex; align-items: center;}
-.flexCont .flexIt span {color: grey;}
-.flexCont .flexIt span:hover {color: black;}
+.flexCont #info {
+	width: 40%;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+h2 {text-align: center;}
+img{max-width: 50%; margin: 2px;}
 
 .flexCont .flexIt #forecast {border: 2px solid palevioletred; padding: 50px;}
 .flexCont .flexIt #forecast li{
@@ -54,4 +60,33 @@ color: blue;
 	height: 40px;
 	border: 2px solid grey;
 	background-color: white;
+	margin: 2px;
+}
+#info {font-size: 18px;}
+#photos{display: block; max-width: 100%;}
+
+@media (max-width:1238px) {
+	.flexCont{flex-wrap: wrap;justify-content: center;}
+	.flexCont #flex1{width: 90%;}
+	.flexCont #info {width: 60%;}
+}
+@media (max-width:860px) {
+	.flexCont #info {
+		width: 90%; 
+		display: flex;
+		justify-content: center;
+	}
+	.flexCont #info #photos{
+		width: 90%; 
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	.flexCont #info #photos h2{width: 100%;}
+	img{max-width: 100%; margin: 2px;}
+}
+@media (max-width:600px) {
+	.flexCont .flexIt #lis .btnFiltr {display: block;}
+	a{width: 50%;}
+	ul{padding: 0px;}
 }
