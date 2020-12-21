@@ -1,35 +1,31 @@
 const path = require(`path`);
 const HtmlWebpackPlugin = require(`html-webpack-plugin`);
 const CopyPlugin = require(`copy-webpack-plugin`);
+const webpack = require("webpack");
 
 module.exports = {
-  mode: `development`,
-  entry: `./src/main.js`, 
-  output: {
-    filename: `bundle.js`,
-    path: path.join(__dirname, `build`)
-  },
-  devtool: `source-map`,
-  devServer: {
-    contentBase: path.join(__dirname, `public`), 
-    publicPath: `http://localhost:8080/`,
-    hot: true, 
-    compress: true 
-  },
+  entry: "./src/main.js",
   module: {
-    rules: [{
-      test: /\.js$/,
-      use: `babel-loader`
-    }]
+    rules: [
+      { test: /\.svg$/, use: "svg-inline-loader" },
+      { test: /\.css$/, use: ["style-loader", "css-loader"] },
+      { test: /\.(js)$/, use: "babel-loader" },
+    ],
   },
+  output: {
+    path: path.resolve(__dirname, "bundle"),
+    filename: "bundle.js",
+  },
+  devServer: {
+    contentBase: path.join(__dirname, `public`),
+    publicPath: `http://localhost:8080/`,
+    hot: true,
+    compress: true,
+  },
+  mode: "production",
   plugins: [
     new HtmlWebpackPlugin({
-      template: `./public/index.html`
+      template: `./public/index.html`,
     }),
-    new CopyPlugin([
-      {from: `./public/css`, to: `css`},
-      {from: `./public/fonts`, to: `css`},
-      {from: `./public/img`, to: `img`}
-    ])
-  ]
+  ],
 };
