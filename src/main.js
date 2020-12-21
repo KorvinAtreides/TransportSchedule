@@ -1,83 +1,83 @@
-var inEnd = document.getElementById("inEnd");
-let clearBtn = document.querySelector("#clear");
-let saveBtn = document.querySelector("#save");
 var inpyts = document.getElementsByTagName("input");
 var myMap = new Map();
 export var myMap;
 var changeBtns = document.getElementsByClassName("changeBtn");
 var deleteBtns = document.getElementsByClassName("deleteBtn");
 
-import loadTodo from './serv/loadStorage.js';
-import saveStorage from './serv/saveStorage.js';
-import clearStorage from './serv/clearStorage.js';
-import clickMainBtn from './event/mainBtn.js';
-import changeSelect from './event/changeSelect.js';
-import weatherBalloon from './fetch/weather.js';
-import flickr from './fetch/flickr.js';
-import addNewRace from './event/addNewRace.js';
-import filterIn from './event/filter.js';
-import changeRaceInp from './event/btnsInLi/changeRace.js';
-import deleteRaceInp from './event/btnsInLi/deleteRace.js';
-import checkTypeInp from './event/btnsInLi/checkType.js';
+import loadTodo from "./serv/loadStorage.js";
+import saveStorage from "./serv/saveStorage.js";
+import clearStorage from "./serv/clearStorage.js";
+import changeSelect from "./event/changeSelect.js";
+import weatherBalloon from "./fetch/weather.js";
+import flickr from "./fetch/flickr.js";
+import addNewRace from "./event/addNewRace.js";
+import filterIn from "./event/filter.js";
+import changeRaceInp from "./event/btnsInLi/changeRace.js";
+import deleteRaceInp from "./event/btnsInLi/deleteRace.js";
+import checkTypeInp from "./event/btnsInLi/checkType.js";
 
 loadTodo();
-saveBtn.addEventListener('click', function(){saveStorage()});
-clearBtn.addEventListener('click', function(){clearStorage()});
-document.getElementById("btn1").onclick = function(){
-  clickMainBtn();
-}
-document.getElementById('select1').addEventListener('change', function() {
-  changeSelect();
-})
-inEnd.addEventListener('change', function() {
-  if (inEnd.validity.valid == true) {
-  let info = document.getElementById("info");
-  info.innerHTML ="";
-  weatherBalloon(inEnd.value);
-  flickr(inEnd.value);
-  }  
-});
-document.getElementById("btnNew").addEventListener('click', function(){
-  addNewRace()
-});
-function filter(){
-  let btnFiltrs = document.getElementsByClassName("btnFiltr");
-  for(let btn of btnFiltrs){
-      btn.addEventListener ("click",function (){
-      filterIn(btn);
-      })
-    }
+saveStorageBtn.onclick = function () {
+  saveStorage();
 };
+clearStorageBtn.onclick = function () {
+  clearStorage();
+};
+btnCreate.onclick = function () {
+  select1.style.display = "block";
+};
+select1.addEventListener("change", function () {
+  changeSelect();
+});
+resetBtn.onclick = function () {
+  info.innerHTML = "";
+};
+inEnd.addEventListener("change", function () {
+  if (inEnd.validity.valid == true) {
+    info.innerHTML = "<h2>Information about arrival station</h2>";
+    weatherBalloon(inEnd.value);
+    flickr(inEnd.value);
+  }
+});
+btnAddNew.onclick = function () {
+  addNewRace();
+};
+function filter() {
+  let btnFiltrs = document.getElementsByClassName("btnFiltr");
+  for (let btn of btnFiltrs) {
+    btn.onclick = function () {
+      filterIn(btn);
+    };
+  }
+}
 filter();
-function inpytVal(){
-  for(let inpyt of inpyts){
-      inpyt.addEventListener ("change", function (event) {
-          if (inpyt.validity.valid == false) {
-              inpyt.value = ""; 
-              alert('неверное значение');
-          }        
-      });
+function inpytVal() {
+  for (let inpyt of inpyts) {
+    inpyt.addEventListener("change", function (event) {
+      if (inpyt.validity.valid == false) {
+        inpyt.value = "";
+        alert("неверное значение");
+      }
+    });
   }
 }
-inpytVal(); 
-export function deleteRace(){
-  for(let deleteBtn of deleteBtns){
-    deleteBtn.addEventListener ("click",function (){
+inpytVal();
+export function deleteRace() {
+  for (let deleteBtn of deleteBtns) {
+    deleteBtn.addEventListener("click", function () {
       deleteRaceInp(deleteBtn.parentNode);
-    })
+    });
   }
 }
-export function changeRace(){
-  for(let changeBtn of changeBtns){
-      changeBtn.addEventListener ("click",function (){
-        changeRaceInp(changeBtn.parentNode);
-      });
+export function changeRace() {
+  for (let changeBtn of changeBtns) {
+    changeBtn.addEventListener("click", function () {
+      changeRaceInp(changeBtn.parentNode);
+    });
   }
 }
-export function checkType(){
-  let spans =document.getElementsByTagName("span");
-  for(let span of spans){
-    span.addEventListener ("click",function (){
-    checkTypeInp(span)})
-  }
+export function checkType(span) {
+  span.onclick = function () {
+    checkTypeInp(span);
+  };
 }

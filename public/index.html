@@ -17,22 +17,18 @@
   <body>
     <div class="flexCont">
       <div class="flexIt" id="flex1">
-        <button id="btn1">новый рейс</button>
+        <button id="btnCreate">Create new Race</button>
         <select id="select1" required>
-          <option value="" disabled selected>Выберите транспорт</option>
-          <option value="автобус">автобус</option>
-          <option value="поезд">поезд</option>
-          <option value="такси">такси</option>
-          <option value="лошадь">лошадь</option>
+          <option value="" disabled selected>Choose transport</option>
+          <option value="Bus">Bus</option>
+          <option value="Train">Train</option>
+          <option value="Taxi">Taxi</option>
+          <option value="Airplain">Airplain</option>
         </select>
 
         <form id="maket">
           <p>
-            <label for="inDate">Дата</label
-            ><input type="date" id="inDate" required />
-          </p>
-          <p>
-            <label for="inStart">Станция отправления</label
+            <label for="inStart">Departure station</label
             ><input
               type="text"
               id="inStart"
@@ -41,7 +37,7 @@
             />
           </p>
           <p>
-            <label for="inEnd">Станция прибытия</label
+            <label for="inEnd">Arrival station</label
             ><input
               type="text"
               id="inEnd"
@@ -50,32 +46,32 @@
             />
           </p>
           <p>
-            <label for="inTimeStart">Время отправления</label
-            ><input type="time" id="inTimeStart" required />
+            <label for="inTimeStart">Departure time</label
+            ><input type="datetime-local" id="inTimeStart" required />
           </p>
           <p>
-            <label for="inTimeEnd">Время прибытия</label
-            ><input type="time" id="inTimeEnd" required />
+            <label for="inTimeEnd">Arrival time</label
+            ><input type="datetime-local" id="inTimeEnd" required />
           </p>
           <p>
-            <label for="inPrice">Цена, $</label
+            <label for="inPrice">Price, $</label
             ><input type="text" id="inPrice" required pattern="\d+(\.\d{2})?" />
           </p>
-          <button type="button" id="btnNew">добавить путь</button>
-          <button type="reset">Reset</button>
+          <button type="button" id="btnAddNew">Add new Race</button>
+          <button type="reset" id="resetBtn">Reset</button>
         </form>
 
         <section id="lis">
-          <div class="btnFiltr" id="btnFiltr1">Главное табло</div>
-          <div class="btnFiltr" id="btnFiltr2">Ждут отправления</div>
-          <div class="btnFiltr" id="btnFiltr3">Отправленные</div>
-          <div class="btnFiltr" id="btnFiltr4">Избранное</div>
+          <div class="btnFiltr" id="btnFiltr1">Main menu</div>
+          <div class="btnFiltr" id="btnFiltr2">Waiting</div>
+          <div class="btnFiltr" id="btnFiltr3">Departured</div>
+          <div class="btnFiltr" id="btnFiltr4">Favourites</div>
           <ul id="items"></ul>
         </section>
 
         <div id="buttons">
-          <button id="clear">Очистить</button>
-          <button id="save">Сохранить</button>
+          <button id="clearStorageBtn">Clear the table</button>
+          <button id="saveStorageBtn">Save in localStorage</button>
         </div>
       </div>
 

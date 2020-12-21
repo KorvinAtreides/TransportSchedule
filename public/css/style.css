@@ -10,83 +10,125 @@ header .top2 .add_route{
 	text-align: center;
 } */
 
-form {display: none;}
+form {
+  display: none;
+}
 form input {
-    width: 150px;
-	margin-left: 15px;
+  width: 200px;
+  margin-left: 15px;
 }
-form #inTimeStart, form #inTimeEnd{width: 85px;}
 form label {
-    width: 150px;
-    display: inline-block;
-} 
-#buttons {display: none;} /*save-delete storage*/
-.dispInl{display: inline-block;}/* div with change nd delete btns */
-
-button {margin: 5px;}
-
-.flexCont{
-	width: 100%;
-	display: flex;
+  width: 150px;
+  display: inline-block;
 }
-.flexCont #flex1{width: 60%;}
-.flexCont .flexIt #select1{
-	width: 200px;
-	font-size: 18px;
-	display: none;
-	margin-top: 20px;
+#buttons {
+  display: none;
+} /*save-delete storage*/
+.dispInl {
+  display: inline-block;
+} /* div with change nd delete btns */
+
+button {
+  margin: 5px;
 }
-.flexCont .flexIt #lis{margin-top: 20px;}
+
+.flexCont {
+  width: 100%;
+  display: flex;
+}
+.flexCont #flex1 {
+  width: 60%;
+}
+.flexCont .flexIt #select1 {
+  width: 200px;
+  font-size: 18px;
+  display: none;
+  margin-top: 20px;
+}
+.flexCont .flexIt #lis {
+  margin-top: 20px;
+}
 .flexCont #info {
-	width: 40%;
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	justify-content: center;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-h2 {text-align: center;}
-img{max-width: 50%; margin: 2px;}
+h2 {
+  text-align: center;
+}
+img {
+  max-width: 50%;
+  margin: 2px;
+}
 
-.flexCont .flexIt #forecast {border: 2px solid palevioletred; padding: 50px;}
-.flexCont .flexIt #forecast li{
-margin-bottom: 15px;
-font-size: 20px;
-color: blue;
+.flexCont .flexIt #forecast {
+  border: 2px solid palevioletred;
+  padding: 50px;
+}
+.flexCont .flexIt #forecast li {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: blue;
 }
 
 .flexCont .flexIt #lis .btnFiltr {
-	display: inline-block;
-	width: 150px;
-	height: 40px;
-	border: 2px solid grey;
-	background-color: white;
-	margin: 2px;
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  border: 2px solid grey;
+  background-color: white;
+  margin: 2px;
 }
-#info {font-size: 18px;}
-#photos{display: block; max-width: 100%;}
+#info {
+  font-size: 18px;
+}
+#photos {
+  display: block;
+  max-width: 100%;
+}
 
-@media (max-width:1238px) {
-	.flexCont{flex-wrap: wrap;justify-content: center;}
-	.flexCont #flex1{width: 90%;}
-	.flexCont #info {width: 60%;}
+@media (max-width: 1238px) {
+  .flexCont {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .flexCont #flex1 {
+    width: 90%;
+  }
+  .flexCont #info {
+    width: 60%;
+  }
 }
-@media (max-width:860px) {
-	.flexCont #info {
-		width: 90%; 
-		display: flex;
-		justify-content: center;
-	}
-	.flexCont #info #photos{
-		width: 90%; 
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-	.flexCont #info #photos h2{width: 100%;}
-	img{max-width: 100%; margin: 2px;}
+@media (max-width: 860px) {
+  .flexCont #info {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+  .flexCont #info #photos {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .flexCont #info #photos h2 {
+    width: 100%;
+  }
+  img {
+    max-width: 100%;
+    margin: 2px;
+  }
 }
-@media (max-width:600px) {
-	.flexCont .flexIt #lis .btnFiltr {display: block;}
-	a{width: 50%;}
-	ul{padding: 0px;}
+@media (max-width: 600px) {
+  .flexCont .flexIt #lis .btnFiltr {
+    display: block;
+  }
+  a {
+    width: 50%;
+  }
+  ul {
+    padding: 0px;
+  }
 }
