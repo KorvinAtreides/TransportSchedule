@@ -17,29 +17,9 @@ export default function flickr(cityName) {
     let s = "";
     for (let i = 0; i < tgr.photos.photo.length; i++) {
       let photo = tgr.photos.photo[i];
-      let t_url =
-        "http://farm" +
-        photo.farm +
-        ".static.flickr.com/" +
-        photo.server +
-        "/" +
-        photo.id +
-        "_" +
-        photo.secret +
-        "_" +
-        "m.jpg";
-      let p_url =
-        "http://www.flickr.com/photos/" + photo.owner + "/" + photo.id;
-      s +=
-        '<a href="' +
-        p_url +
-        '">' +
-        '<img alt="' +
-        photo.title +
-        '"src="' +
-        t_url +
-        '"/>' +
-        "</a>";
+      let t_url = `http://farm${photo.farm}.static.flickr.com/${photo.server}/${photo.id}_${photo.secret}_m.jpg`;
+      let p_url = `http://www.flickr.com/photos/${photo.owner}/${photo.id}`;
+      s += `<a href="${p_url}"><img alt="${photo.title}" src="${t_url}"/></a>`;
     }
     info.innerHTML += `
       <div id="photos">
