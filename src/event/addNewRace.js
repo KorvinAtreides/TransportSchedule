@@ -1,4 +1,4 @@
-import { checkType, deleteRace, changeRace, myMap } from "../main.js";
+import { myMap } from "../main.js";
 import Race from "../constructor/Race.js";
 
 function dividedDate(str) {
@@ -70,8 +70,5 @@ export default function addNewRace() {
     }
     select1.options[0].selected = true;
     info.innerHTML = "";
-    changeRace();
-    deleteRace();
-    checkType(li.lastChild);
   }
 }

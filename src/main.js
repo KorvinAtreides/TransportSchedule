@@ -1,8 +1,5 @@
-var inpyts = document.getElementsByTagName("input");
 var myMap = new Map();
 export var myMap;
-var changeBtns = document.getElementsByClassName("changeBtn");
-var deleteBtns = document.getElementsByClassName("deleteBtn");
 
 import loadTodo from "./serv/loadStorage.js";
 import saveStorage from "./serv/saveStorage.js";
@@ -42,42 +39,37 @@ inEnd.addEventListener("change", function () {
 btnAddNew.onclick = function () {
   addNewRace();
 };
-function filter() {
-  let btnFiltrs = document.getElementsByClassName("btnFiltr");
-  for (let btn of btnFiltrs) {
-    btn.onclick = function () {
-      filterIn(btn);
-    };
+
+maket.addEventListener("input", function (event) {
+  if (event.target.validity.valid == false) {
+    event.target.value = "";
+    alert("неверное значение");
   }
-}
-filter();
-function inpytVal() {
-  for (let inpyt of inpyts) {
-    inpyt.addEventListener("change", function (event) {
-      if (inpyt.validity.valid == false) {
-        inpyt.value = "";
-        alert("неверное значение");
+});
+
+lis.addEventListener("click", function (event) {
+  switch (event.target.classList.value) {
+    case "btnFiltr":
+      filterIn(event.target);
+      break;
+    case "changeBtn":
+      changeRaceInp(event.target.parentNode);
+      break;
+    case "deleteBtn":
+      deleteRaceInp(event.target.parentNode);
+      break;
+    case "svg-inline--fa fa-check-circle fa-w-16":
+      checkTypeInp(event.target.parentNode);
+      break;
+    case "":
+      if (
+        event.target.parentNode.classList.value ==
+        "svg-inline--fa fa-check-circle fa-w-16"
+      ) {
+        checkTypeInp(event.target.parentNode.parentNode);
       }
-    });
+      break;
+    default:
+      break;
   }
-}
-inpytVal();
-export function deleteRace() {
-  for (let deleteBtn of deleteBtns) {
-    deleteBtn.addEventListener("click", function () {
-      deleteRaceInp(deleteBtn.parentNode);
-    });
-  }
-}
-export function changeRace() {
-  for (let changeBtn of changeBtns) {
-    changeBtn.addEventListener("click", function () {
-      changeRaceInp(changeBtn.parentNode);
-    });
-  }
-}
-export function checkType(span) {
-  span.onclick = function () {
-    checkTypeInp(span);
-  };
-}
+});
