@@ -48,20 +48,15 @@ export default function addNewRace() {
       inPrice.value
     );
 
-    li.innerHTML +=
-      '<div class="dispInl" id="change' +
-      today.getHours() +
-      today.getMinutes() +
-      today.getSeconds() +
-      '"><button type="button" class="changeBtn">change</button><button type="button" class="deleteBtn">delete</button></div>';
+    li.innerHTML += `
+    <div class="dispInl" id="change${today.getHours()}${today.getMinutes()}${today.getSeconds()}">
+      <button type="button" class="changeBtn">change</button>
+      <button type="button" class="deleteBtn">delete</button>
+    </div>`;
     li.innerHTML += '<span><i class="fas fa-check-circle"></i></span>';
     li.lastChild.style.color = "grey";
     myMap.set(
-      "change" +
-        today.getHours() +
-        today.getMinutes() +
-        today.getSeconds() +
-        "",
+      `change${today.getHours()}${today.getMinutes()}${today.getSeconds()}`,
       newRace
     );
     let inpyts = document.getElementsByTagName("input");
